@@ -1,5 +1,5 @@
 body .reveal h1 {
-  font-family: 'Yantramanav';
+  font-family: 'Kreon', serif;
   font-weight: bold;
 }
 
@@ -9,25 +9,30 @@ body .reveal h1 {
 }
 
 body .reveal h2 {
-  font-family: 'Yantramanav';
+  font-family: 'Kreon', serif;
   font-size: 1.11em;
   font-weight: bold; 
 }
 
 body .reveal h3 {
-  font-family: 'Yantramanav';
+  font-family: 'Kreon', serif;
   font-weight: bold; 
   font-size: 1em; 
 }
 
 body .reveal h4 {
-  font-family: 'Yantramanav';  
+  font-family: 'Kreon', serif;  
   font-weight: bold; 
   font-size: 0.9em; 
 }
 
 body .reveal {
-  font-family: 'Yantramanav';
+  font-family: 'Yanone Kaffeesatz';
+}
+
+body .reveal .slides {
+  /*background: #2c2929;*/
+  /*box-shadow: 10px 3px 40px #666;*/
 }
 
 body .reveal a {
@@ -48,8 +53,18 @@ body .reveal ul {
   line-height: 1.5;
 }
 
+body .reveal pre code {
+  /*background: #F5F5F5;*/
+  /*color: #;  */
+}
+
 body .reveal li>code, body .reveal p>code {
   font-size: 0.7em;
   font-weight: bold;
-  background: #fff;
+  /*background: #fff;*/
+}
+
+body {
+  background-color: ##1e1d1d !important;
+  font-size: 200%;
 }
