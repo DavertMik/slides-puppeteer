@@ -118,7 +118,7 @@ We don't define how the test is executed!
 
 ---
 
-<video onclick="this.paused ? this.play() : this.pause();" src="/img/codeceptjs_demo.mp4"  controls=""></video>
+<video onclick="this.paused ? this.play() : this.pause();" src="img/codeceptjs_demo.mp4"  controls=""></video>
 
 
 ---
