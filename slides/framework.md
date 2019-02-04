@@ -25,7 +25,7 @@
 * Rich ecosystem <!-- .element: class="fragment" data-fragment-index="1" -->
 * Not limited to Selenium <!-- .element: class="fragment" data-fragment-index="2" -->
 * In browser execution <!-- .element: class="fragment" data-fragment-index="3" -->
-* *Drawback* Learn how to deal with promises <!-- .element: class="fragment" data-fragment-index="4" -->
+* Learn how to deal with promises <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
