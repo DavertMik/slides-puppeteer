@@ -10,12 +10,6 @@
 
 ---
 
-## Kayaking
-
-![](img/dnister.jpg)
-
----
-
 ## Conference Speaking
 
 ![](img/map.png)

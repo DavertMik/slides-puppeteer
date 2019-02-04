@@ -1,10 +1,8 @@
-## ATDD & CodeceptJS
+# Design Decisions
 
-### Effective Testing Without Pain
-
-![](https://codecept.io/images/cjs-base.png)
+## for Perfect JS E2E Testing Framework
 
 by Michael Bodnarchuk
 
 
-2018
+2019
