@@ -383,6 +383,7 @@ Feature: Visit the app dashboard
 
 ---
 
+
 <img src="img/codeceptjs.png" style="float: right; width: 300px;">
 
 ## CodeceptJS
