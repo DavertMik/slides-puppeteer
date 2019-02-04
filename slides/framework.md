@@ -181,12 +181,12 @@ FormPage.submit()
 * Mocha testing framework + chai assertions   <!-- .element: class="fragment" data-fragment-index="2" -->
 * UI Debugger   <!-- .element: class="fragment" data-fragment-index="3" -->
 * Good documentation   <!-- .element: class="fragment" data-fragment-index="4" -->
-* Auto retry failed steps
-* [LIMITATIONS!!!](https://docs.cypress.io/guides/references/trade-offs.html) <!-- .element: class="fragment" data-fragment-index="5" -->
-  * No XPath <!-- .element: class="fragment" data-fragment-index="5" -->
-  * No file uploads <!-- .element: class="fragment" data-fragment-index="5" -->
-  * No multiple browsers, multiple tabs <!-- .element: class="fragment" data-fragment-index="5" -->
-  * No iframes <!-- .element: class="fragment" data-fragment-index="5" -->
+* Auto retry failed steps <!-- .element: class="fragment" data-fragment-index="5" -->
+* [LIMITATIONS!!!](https://docs.cypress.io/guides/references/trade-offs.html) <!-- .element: class="fragment" data-fragment-index="6" -->
+  * No XPath <!-- .element: class="fragment" data-fragment-index="6" -->
+  * No file uploads <!-- .element: class="fragment" data-fragment-index="6" -->
+  * No multiple browsers, multiple tabs <!-- .element: class="fragment" data-fragment-index="6" -->
+  * No iframes <!-- .element: class="fragment" data-fragment-index="6" -->
 
 ---
 
@@ -378,8 +378,10 @@ Feature: Visit the app dashboard
 ## Survive The Change
 
 * Write high level test code
+* Separate scenario from browser control
 * Use Cucumber or **CodeceptJS**
 
+---
 
 <img src="img/codeceptjs.png" style="float: right; width: 300px;">
 
@@ -436,7 +438,7 @@ Scenario('todomvc', (I, loginPage) => {
 
 ---
 
-## Thank You
+## Thank You!
 
 Michael Bodnarchuk
 
