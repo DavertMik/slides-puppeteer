@@ -7,7 +7,7 @@
 * what language to choose <!-- .element: class="fragment" data-fragment-index="1" -->
 * how to execute tests <!-- .element: class="fragment" data-fragment-index="2" -->
 * how to write tests <!-- .element: class="fragment" data-fragment-index="3" -->
-* how to interact with elements on page <!-- .element: class="fragment" data-fragment-index="4" -->
+* how to control browser <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
@@ -25,18 +25,7 @@
 * Rich ecosystem <!-- .element: class="fragment" data-fragment-index="1" -->
 * Not limited to Selenium <!-- .element: class="fragment" data-fragment-index="2" -->
 * In browser execution <!-- .element: class="fragment" data-fragment-index="3" -->
-* Learn how to deal with promises <!-- .element: class="fragment" data-fragment-index="4" -->
-
----
-
-## Requirements for Test Framework
-
-* Easy to learn <!-- .element: class="fragment" data-fragment-index="1" -->
-* Easy to setup <!-- .element: class="fragment" data-fragment-index="2" -->
-* Fast <!-- .element: class="fragment" data-fragment-index="3" -->
-* Cross browser ? <!-- .element: class="fragment" data-fragment-index="4" -->
-* Readable tests <!-- .element: class="fragment" data-fragment-index="5" -->
-* Reports, Parallelization <!-- .element: class="fragment" data-fragment-index="6" -->
+* [WARNING] Deal with promises <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
@@ -112,12 +101,12 @@
 
 ### Protractor
 
-- Selenium (built on top of official library) <!-- .element: class="fragment" data-fragment-index="1" -->
-- Good Documentation <!-- .element: class="fragment" data-fragment-index="2" -->
-- Jasmine Testing Framework <!-- .element: class="fragment" data-fragment-index="3" -->
-- Runner <!-- .element: class="fragment" data-fragment-index="4" -->
-- Ooooooutdated <!-- .element: class="fragment" data-fragment-index="5" -->
-- Protractor 6 will break everything <!-- .element: class="fragment" data-fragment-index="6" -->
+- Selenium (built on top of official library)
+- Good Documentation
+- Jasmine Testing Framework
+- Runner
+- Ooooooutdated
+- Protractor 6 will break everything
 
 ---
 
@@ -147,12 +136,12 @@ it('should add a todo', function() {
 
 ### WebdriverIO
 
-- Alternative Selenium implementation  <!-- .element: class="fragment" data-fragment-index="1" -->
-- Mobile testing with Appium supported  <!-- .element: class="fragment" data-fragment-index="2" -->
-- Awesome documentation  <!-- .element: class="fragment" data-fragment-index="3" -->
-- v4 to v5 upgrade...  <!-- .element: class="fragment" data-fragment-index="4" -->
-- W3C spec + JSONWire spec  <!-- .element: class="fragment" data-fragment-index="5" -->
-- Standalone / Jasmine / Mocha / Cucumber integration <!-- .element: class="fragment" data-fragment-index="6" -->
+- Alternative Selenium implementation 
+- Mobile testing (Native Apps) with Appium
+- Awesome documentation 
+- v4 to v5 upgrade... 
+- W3C spec + JSONWire spec 
+- Standalone / Jasmine / Mocha / Cucumber integration
 
 ---
 
@@ -177,16 +166,16 @@ FormPage.submit()
 
 ### Cypress.io
 
-* Chrome-based, runs inside a browser   <!-- .element: class="fragment" data-fragment-index="1" -->
-* Mocha testing framework + chai assertions   <!-- .element: class="fragment" data-fragment-index="2" -->
-* UI Debugger   <!-- .element: class="fragment" data-fragment-index="3" -->
-* Good documentation   <!-- .element: class="fragment" data-fragment-index="4" -->
-* Auto retry failed steps <!-- .element: class="fragment" data-fragment-index="5" -->
-* [LIMITATIONS!!!](https://docs.cypress.io/guides/references/trade-offs.html) <!-- .element: class="fragment" data-fragment-index="6" -->
-  * No XPath <!-- .element: class="fragment" data-fragment-index="6" -->
-  * No file uploads <!-- .element: class="fragment" data-fragment-index="6" -->
-  * No multiple browsers, multiple tabs <!-- .element: class="fragment" data-fragment-index="6" -->
-  * No iframes <!-- .element: class="fragment" data-fragment-index="6" -->
+* Chrome-based, runs inside a browser   
+* Mocha testing framework + chai assertions
+* UI Debugger
+* Good documentation 
+* Auto retry failed steps 
+* [LIMITATIONS!!!](https://docs.cypress.io/guides/references/trade-offs.html)
+  * No XPath 
+  * No file uploads 
+  * No multiple browsers, multiple tabs 
+  * No iframes 
 
 ---
 
@@ -236,10 +225,27 @@ it('adds 2 todos', function () {
 
 ### Puppeteer
 
-* Official Google Chrome DevTools library <!-- .element: class="fragment" data-fragment-index="1" -->
-* Standalone library (no testing framework) <!-- .element: class="fragment" data-fragment-index="2" -->
-* Good API Documentation <!-- .element: class="fragment" data-fragment-index="3" -->
-* Provides full browser control <!-- .element: class="fragment" data-fragment-index="4" -->
+* Official Google Chrome DevTools library
+* Standalone library (no testing framework)
+* Good API Documentation
+* Provides full browser control
+
+---
+
+### Example
+
+```js
+
+beforeEach(async () => {
+    const page = await browser.newPage()
+    await page.setViewport({ width: 1280, height: 800 })
+    await page.goto('https://www.walmart.com/ip/Super-Mario-Odyssey-Nintendo-Switch/56011600', { waitUntil: 'networkidle2' })
+    await page.click('button.prod-ProductCTA--primary')
+    await page.waitForSelector('.Cart-PACModal-ItemInfoContainer')
+    await page.screenshot({path: screenshot})
+    await browser.close()  
+});
+```
 
 ---
 
@@ -253,12 +259,12 @@ it('adds 2 todos', function () {
 
 ### TestCafe
 
-* Cross-browser client-side testing <!-- .element: class="fragment" data-fragment-index="1" -->
-* Proxy server for mocking all requests <!-- .element: class="fragment" data-fragment-index="2" -->
-* Doesn't control browser <!-- .element: class="fragment" data-fragment-index="3" -->
-* Custom test framework, assertions, runner <!-- .element: class="fragment" data-fragment-index="4" -->
-* Parallel execution built-in <!-- .element: class="fragment" data-fragment-index="5" -->
-* Multi-browser setup <!-- .element: class="fragment" data-fragment-index="6" -->
+* Cross-browser client-side testing
+* Proxy server for mocking all requests
+* Doesn't control browser
+* Custom test framework, assertions, runner
+* Parallel execution built-in
+* Multi-browser setup
 
 ---
 
@@ -383,7 +389,6 @@ Feature: Visit the app dashboard
 
 ---
 
-
 <img src="img/codeceptjs.png" style="float: right; width: 300px;">
 
 ## CodeceptJS
@@ -396,6 +401,12 @@ Feature: Visit the app dashboard
 * High level API (with Cucumber support)
 * Interactive debug mode
 * Auto retry failed steps
+
+---
+
+### Architecture
+
+![](img/codeceptjs-backends.svg)
 
 ---
 
@@ -421,12 +432,19 @@ Scenario('todomvc', (I, loginPage) => {
 
 ---
 
-### Architecture
+### Live Development
 
-![](img/codeceptjs-backends.svg)
+```js
+I.amOnPage('/');
+pause();
+```
 
+* Call `pause()` to interrupt the test
+* Use interactive shell to try different commands
+* Copy successful commands into a test
 
 ---
+
 
 ## Conclusions
 
