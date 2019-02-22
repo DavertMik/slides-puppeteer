@@ -1,4 +1,6 @@
-# So you want some test automation?
+### So you want some test automation?
+
+![](img/psst.jpg)
 
 ---
 
@@ -97,6 +99,14 @@
 
 ---
 
+## Browser Control
+
+Internal | External
+
+![](img/webinterface.png)
+
+---
+
 <img src="img/angular-protractor.png" style="float: right;">
 
 ### Protractor
@@ -104,7 +114,8 @@
 - Selenium (built on top of official library)
 - Good Documentation
 - Jasmine Testing Framework
-- Runner
+- Angular support
+- Java-like syntax
 - Ooooooutdated
 - Protractor 6 will break everything
 
@@ -229,6 +240,9 @@ it('adds 2 todos', function () {
 * Standalone library (no testing framework)
 * Good API Documentation
 * Provides full browser control
+* Headers, Mock requests, Responses
+* Multi tab control, incognito mode
+* Iframes, file upload...
 
 ---
 
