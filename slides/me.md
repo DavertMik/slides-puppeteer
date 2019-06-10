@@ -4,15 +4,8 @@
 * Michael Bodnarchuk **@davert**
 * Web developer from Kyiv, Ukraine
 * Lead developer of **CodeceptJS**
-* Also author of Codeception, Robo and others
+* Open-source contributor
 * Tech **Consultant**, CTO at SDCLabs 
-
-
----
-
-## Conference Speaking
-
-![](img/map.png)
 
 ---
 

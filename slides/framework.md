@@ -1,33 +1,26 @@
-### So you want some test automation?
+### So you want some browser test automation?
 
 ![](img/psst.jpg)
 
 ---
 
-## Questions to be asked
-
-* what language to choose <!-- .element: class="fragment" data-fragment-index="1" -->
-* how to execute tests <!-- .element: class="fragment" data-fragment-index="2" -->
-* how to write tests <!-- .element: class="fragment" data-fragment-index="3" -->
-* how to control browser <!-- .element: class="fragment" data-fragment-index="4" -->
-
----
-
-## What language to choose?
-
-* Java
-* Ruby
-* Python
-* JavaScript
+# JavaScript is the future
+### For test automation <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
 ## JavaScript!
 
+* Simple language*
 * Rich ecosystem <!-- .element: class="fragment" data-fragment-index="1" -->
 * Not limited to Selenium <!-- .element: class="fragment" data-fragment-index="2" -->
 * In browser execution <!-- .element: class="fragment" data-fragment-index="3" -->
-* [WARNING] Deal with promises <!-- .element: class="fragment" data-fragment-index="4" -->
+
+---
+
+#### *JavaScript is simple except
+
+# Promises <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
@@ -79,6 +72,7 @@
 * Cypress.io
 * Puppeteer
 * TestCafe
+* NightwatchJS
 * NightmareJS
 
 ---
@@ -139,6 +133,34 @@ it('should add a todo', function() {
   expect(todoList.count()).toEqual(3);
   expect(todoList.get(2).getText()).toEqual('write a protractor test');
 });
+```
+
+---
+
+<img src="img/nightwatch.svg" style="float: right; width: 300px;">
+
+### Nightwatch
+
+* Mastodon of web testing in JS
+* Selenium (JSON-Wire) based
+* Everyone used it before 
+* Everyone tries to migrate from it...
+* But they have fancy logo 
+
+---
+
+```js
+this.demoTestGoogle = function (browser) {
+  browser
+    .useXpath() // every selector now must be xpath
+    .click("//tr[@data-recordid]/span[text()='Search Text']")
+    .useCss() // we're back to CSS now
+    .setValue('input[type=text]', 'nightwatch')
+  browser.expect
+    .element('body')
+    .to.have.attribute('class')
+    .which.contains('found-item');
+};
 ```
 
 ---
@@ -310,7 +332,7 @@ test('Dealing with text using keyboard', async t => {
 
 ## Asynchronity
 
-*In JavaScript all browser commands are promises*
+*In JavaScript all browser commands are **promises***
 
 |Driver   | Strategy  |
 |:--|:--|
@@ -473,12 +495,11 @@ pause();
 
 ## Thank You!
 
-Michael Bodnarchuk
+Michael Bodnarchuk **@davert**
 
 * Web developer from Kyiv, Ukraine
-* Open-source developer, author of **Codeception**, **CodeceptJS** testing frameworks
+* Author of **CodeceptJS** testing frameworks
 * Consultant @ [SDCLabs](http://sdclabs.com)
-* [EasyTesting.io](http://easytesting.io)
 
 
 
