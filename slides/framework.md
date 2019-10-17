@@ -67,6 +67,7 @@
 
 ## Browser Driver
 
+* selenium-webdriver
 * Protractor
 * webdriverio
 * Cypress.io
@@ -98,6 +99,16 @@
 Internal | External
 
 ![](img/webinterface.png)
+
+---
+
+### selenium-webDriver
+
+* Official library of Selenium
+* The most used Selenium library in NodeJS
+* Documentation?
+* Repository?
+
 
 ---
 
@@ -244,12 +255,6 @@ it('adds 2 todos', function () {
 
 ---
 
-### Rise of Cypress.io
-
-![](img/cypress/Selection_430.png)
-
----
-
 > Cypress.io is over-estimated as end 2 end testing framework
 
 ---
@@ -282,12 +287,6 @@ beforeEach(async () => {
     await browser.close()  
 });
 ```
-
----
-
-### Rise of Puppeteer
-
-![](img/cypress/Selection_431.png)
 
 ---
 
@@ -336,6 +335,7 @@ test('Dealing with text using keyboard', async t => {
 
 |Driver   | Strategy  |
 |:--|:--|
+| selenium-webdriver | async/await |
 | Protractor 5 | control flow |
 | Protractor 6 | async/await |
 | webdriverio | sync fibers, async/await |
