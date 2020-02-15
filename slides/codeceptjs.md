@@ -3,13 +3,22 @@
 ## CodeceptJS
 
 * Multi-driver testing framework
-  * webdriverio
+  * Webdriverio
   * Puppeteer
+  * Playwright
+  * TestCafe
   * Protractor  
 * Custom runner, mocha-based test framework 
 * High level API (with Cucumber support)
 * Interactive debug mode
-* Auto retry failed steps
+
+---
+
+## Same tests for different engines
+
+![](img/codecept_ci.png)
+
+From TravisCI for CodeceptJS project 👆
 
 ---
 
@@ -35,47 +44,32 @@ Scenario('todomvc', (I, loginPage) => {
 
 ---
 
-### Architecture
+## Puppeteer-Playwright Features
 
-![](img/codeceptjs-backends.svg)
-
-
-## Tradeoffs
-
-* Relying on a framework
-* Dealing with abstractions
+* Assertions
+* Auto retry on failed contexts
+* RetryFailedStep plugin
+* AutoDelay plugin
 
 ---
 
-## Anyway...
+### CodeceptUI
+
+![](img/codecetui.gif)
 
 ---
 
-## We aim for 
+### Writing Test in CodeceptUI
 
-* Readability
-* Stability
-* Speed
-* Maintainability <!-- .element: class="fragment" data-fragment-index="1" -->
+![](img/new-test.gif)
 
 ---
 
-## Maintainability
+## Conclusion
 
-* Tests are clear and simple
-* Developer and QA teams work together
-* Everyone is responsible for tests
-* Anyone can fix a failing test
-* Easy upgrade from legacy tools
-
----
-
-## Summary
-
-* ATDD for readable/stable/maintainable e2e tests
-* CodeceptJS to help 😉 
-
-
+* Puppeteer is a modern alternative to WebDriver <!-- .element: class="fragment" data-fragment-index="1" -->
+* Playwright extends Puppeteer to all major browsers <!-- .element: class="fragment" data-fragment-index="2" -->
+* CodeceptJS unites all browser engines with a framework on top of it <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 

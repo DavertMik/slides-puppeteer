@@ -1,17 +1,17 @@
 ## WebDriver - the end of monopoly
 
-* Slow evolution of WebDriver
-* Alternatve testing solutions
-  * Cypress.io
-  * TestCafe
-  * Puppeteer
-* Death of Internet Explorer
+* Slow evolution of WebDriver <!-- .element: class="fragment" data-fragment-index="1" -->
+* Death of Internet Explorer <!-- .element: class="fragment" data-fragment-index="2" -->
+* Alternatve testing solutions <!-- .element: class="fragment" data-fragment-index="3" -->
+  * Cypress.io <!-- .element: class="fragment" data-fragment-index="3" -->
+  * TestCafe <!-- .element: class="fragment" data-fragment-index="3" -->
+  * Puppeteer <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
 ## Puppeteer
 
-* started in 2017 by Google Chrome 
+* started in 2017 
 * by Google Chrome Team
 * based on CDP protocol
 
@@ -51,10 +51,10 @@
 * direct connection to browser (no need for ChromeDriver)
 * installs Chrome browser for you
 * works with Firefox 
-* APIs for:
-  * Codecoverage
-  * Browser emulation
-  * Networking
+* APIs for window/frames/tabs control
+* network API
+* workers API
+* ...
 
 ---
 
@@ -88,7 +88,7 @@ await browser.close()
 
 ---
 
-## Puppeteer Issues & Solutions
+# Puppeteer Issues & Solutions
 
 ---
 
@@ -133,6 +133,30 @@ const retryAction = async (action) => {
 
 await page.click('a.navigate-to-page');
 const body = await retryAction(() => page.$('body'));
+```
+
+---
+
+## Element is not ready yet
+
+* **Solution #1**. `waitForSelector` + click/type/...
+* **Solution #2**. Use retry wrapper from previous slide 👈
+* **Solution #3** Use `jest-puppeteer`
+
+```js
+// Will try while 500ms to click on "button"
+await page.toClick('button')
+```
+
+---
+
+## Assertions
+
+Use `expect-puppeteer` from jest-puppeteer
+
+```js
+// make an assertion
+await expect(page).toMatchElement('div', { text: 'Success' })
 ```
 
 ---
@@ -224,19 +248,24 @@ await wd.quit();
 
 ---
 
+
+## Cooking Puppeteer
+
+<img src="img/witch_cooking.png" style="float: right; width: 300px;">
+
+* Use assertion library
+* Install Jest-Puppeteer (optionally)
+* Use retry-wrappers
+* Write more wrappers! <!-- .element: class="fragment" data-fragment-index="1" -->
+
+
+---
+
 # Advanced Features
 
----
-
-## CodeCoverage
-
----
-
-## Network
-
----
-
-### Cypress.io vs Puppeteer
+* code coverage (CSS, JS, source maps)
+* performance testing
+* device emulation (network emulation)
 
 ---
 
@@ -248,4 +277,86 @@ await wd.quit();
 * ~~SauceLabs~~
 
 ---
+
+### Cypress.io vs Puppeteer
+
+| Type | Cypress.io | Puppeteer |   |
+| --- | --- | --- | --- |
+| Fast | ✔  | ✔ | | 
+| Auto-retries | ✔ | ❌ | *see these slides |
+| Cross-browser support | ✔⚠  | ✔⚠ | *chromium firefox |
+| Events | Emulated | Native | * over/focus/click events may be skipped |
+| Mocking | fetch | network control | * full network control over fetch mocking |
+
+---
+
+### Cypress.io vs Puppeteer
+
+| Type | Cypress.io | Puppeteer |
+| --- | --- | --- | 
+| iFrame | ❌ | ✔ |
+| Tabs | ❌ | ✔ |
+| Incognito Window | ❌ | ✔ |
+| XPath | ❌ | ✔ |
+| async/await | ❌ | ✔ |
+| Uploads | ❌ | ✔ |
+| Downloads | ❌ | ✔ |
+| Simple <!-- .element: class="fragment" data-fragment-index="1" --> | ✔ <!-- .element: class="fragment" data-fragment-index="1" --> | ❌ <!-- .element: class="fragment" data-fragment-index="1" --> |
+| UI <!-- .element: class="fragment" data-fragment-index="2" --> | ✔ <!-- .element: class="fragment" data-fragment-index="2" --> | ❌ <!-- .element: class="fragment" data-fragment-index="2" --> |
+
+---
+
+![](img/different.jpg)
+
+---
+
+## **Playwright**
+
+* Made by the same team as Puppeteer <!-- .element: class="fragment" data-fragment-index="1" -->
+* Same API as Puppeteer <!-- .element: class="fragment" data-fragment-index="2" -->
+* Works for Firefox and Chromium... <!-- .element: class="fragment" data-fragment-index="3" -->
+
+... and Safari <!-- .element: class="fragment" data-fragment-index="4" -->
+
+---
+
+## Cross-Browser Testing
+
+|          | ver | Linux | macOS | Win |
+|   ---:   | :---: | :---: | :---:  | :---: |
+| Chromium| 81.0.4044 | ✔ | ✔ | ✔ |
+| WebKit | 13.0.4 | ✔ | ✔ | ✔ |
+| Firefox |73.0b3 | ✔ | ✔ | ✔ |
+
+* Headless is supported for all the browsers on all platforms.
+* Chromium == Microsoft Edge (new)
+* Webkit == Safari
+
+---
+
+## Differences with Puppeteer
+
+* Focuses on test automation
+  * auto wait for element appeared
+  * custom strategies from core
+* Includes patched Firefox & WebKit
+* Has XPath & custom selector support
+
+---
+
+## Migrate to Playwright Today
+
+⚠ Not recommended until Playwright hits 1.0
+
+[Migrating from Puppeteer to Playwright](https://medium.com/@davert/puppeteer-to-playwright-migration-guide-6c86ea66e85e?source=friends_link&sk=e3ec4d78e3f51114dadcb7aabde82451)
+
+---
+
+
+## Not sure what to choose? 
+
+* Is Puppeteer stll a thing? 🤔 <!-- .element: class="fragment" data-fragment-index="1" -->
+* Is this a good time to migrate to Playwright? ⏲ <!-- .element: class="fragment" data-fragment-index="2" -->
+* Selenium works. Don't touch it! 👷 <!-- .element: class="fragment" data-fragment-index="3" -->
+* Only Cypress!!!!111111 We 💖 it!1111 <!-- .element: class="fragment" data-fragment-index="4" -->
 
