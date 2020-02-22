@@ -4,8 +4,8 @@
 
 * Multi-driver testing framework
   * Webdriverio
-  * Puppeteer
-  * Playwright
+  * **Puppeteer**
+  * **Playwright** (since 2.5)
   * TestCafe
   * Protractor  
 * Custom runner, mocha-based test framework 
@@ -77,4 +77,7 @@ Scenario('todomvc', (I, loginPage) => {
 
 * Michael Bodnarchuk @davert
 * Author of CodeceptJS: [codecept.io](https://codecept.io)
- 
+* Tweets on test automation: **@davert**
+* [Testomat.io](http://testomat.io) ➡ JS test automation management software
+
+

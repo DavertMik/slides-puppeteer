@@ -185,16 +185,19 @@ waitAction(() => page.click('a.nav'), { before: 100, after: 500 });
 **Problem:** viewport does not resize actual window
 
 ```js
-await page.setViewport({
-  width: 1900,
-  height: 1000,
-});
+await page.setViewport({ 1600, 1000 });
 ```
+
+![](img/viewport.png)
+
+---
+
+## Window vs Viewport
 
 **Solution** resize window on start
 
 ```js
-const width = 1900;
+const width = 1600;
 const height = 1000;
 
 const browser = await puppeteer.launch({args: 
@@ -320,6 +323,12 @@ await wd.quit();
 
 ---
 
+## Installing Playwright
+
+![](img/playwright-install.png)
+
+---
+
 ## Cross-Browser Testing
 
 |          | ver | Linux | macOS | Win |
@@ -331,6 +340,7 @@ await wd.quit();
 * Headless is supported for all the browsers on all platforms.
 * Chromium == Microsoft Edge (new)
 * Webkit == Safari
+
 
 ---
 
